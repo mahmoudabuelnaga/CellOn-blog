@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+New{% endblock title %}
+{% block body %}
+  			<!-- About Generic Start -->
+			  <section class="about-generic-area">
+				<div class="container border-top-generic">
+					<h1>New post</h1>
+					<form action="" method="post">{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Save" />
+					</form>				</div>
+			</section>
+			<!-- End generic Area -->
+{% endblock body %}
+

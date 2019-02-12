@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Home
+{% endblock title %}
+
+{% block body %}
+	<!-- Start Feature Area -->
+	
+		
+		
+  <section class="feature-area pt-100 pb-100  relative">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row">
+				{% for post in object_list %}
+
+			<div  class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+
+				<div  class="single-feature">
+						<a href="{% url 'detail' post.slug %}">
+
+					<div  class="icon">
+							<img style="width:100%"  src="{{post.img.url}}" alt="">
+					</div>
+					<div class="desc">
+						<h2 class="text-uppercase">{{post.title}}</h2>
+					</a>
+						<p>{{post.content}}</p>
+					</div>
+
+				</div>
+
+
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</section>
+
+{% endblock body %}
